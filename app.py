@@ -37,7 +37,7 @@ def open_chart_tab():
     open_chart_tabs.add(window_tag)
     with dpg.window(tag=window_tag, label=f"Open Chart", width=100, height=100, no_resize=True, on_close=close_window, user_data=window_tag):
         dpg.add_text("Ticker:")
-        dpg.add_input_text(label="##ticker_input", tag="ticker_input", default_value="BTC")
+        dpg.add_input_text(label="##ticker_input", tag="ticker_input", default_value="NVDA")
         dpg.add_button(label="Open", callback=open_chart_clicked, user_data={"input_tag": "ticker_input", "window_tag": window_tag})
 
 def _on_t_down(sender, app_data):
@@ -47,11 +47,11 @@ def _on_t_down(sender, app_data):
 with dpg.handler_registry():
     dpg.add_key_press_handler(key=dpg.mvKey_T, callback=_on_t_down)
 
-with dpg.window(tag="HomePage", label="HomePage", width=400, height=400, no_resize=True):
+with dpg.window(tag="HomePage", label="HomePage", width=1920, height=1080):
     dpg.add_text("This is the Home Page.")
     # allow for widgets like watchlists, news, etc. in the future
 
-with dpg.window(tag="WelcomeTab", label="WelcomeTab", width=400, height=400):
+with dpg.window(tag="WelcomeTab", label="WelcomeTab", width=400, height=400, no_resize=True):
     dpg.add_text("Welcome to MarketViewer!")
     dpg.add_text("TAB+T to open a new chart tab")
 

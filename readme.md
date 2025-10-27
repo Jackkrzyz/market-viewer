@@ -2,6 +2,12 @@
 
 Market Viewer is a desktop application for viewing stocks, cryptocoins, and polymarkets
 
+Dependencies:
+TVDATAFEED: https://github.com/rongardF/tvdatafeed
+```
+pip install --upgrade --no-cache-dir git+https://github.com/rongardF/tvdatafeed.git
+```
+
 TODO:
 ```
 setup timescaledb for storing historical data
